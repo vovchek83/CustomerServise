@@ -1,0 +1,80 @@
+﻿<cas:Window  x:Class="Client.Views.Shell.ShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cas="http://schemas.company.com/cas/2015/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
+             mc:Ignorable="d"
+             x:Name="root"
+             Icon="{StaticResource AppIconSource}"
+             MinHeight="600"
+             MinWidth="800"
+             WindowState="Normal"
+             Style="{StaticResource WindowStyle}"
+             d:DesignWidth="2379.799" 
+             d:DesignHeight="1334.346"
+             WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!-- ***************** Navigation bar ********************** -->
+        <Border Grid.Row="0"
+                BorderThickness="0 0 0 2"
+                Padding="4 0 20 0"
+                Background="{StaticResource BlackBrush}"
+                BorderBrush="{StaticResource FucsiaBrush}">
+            <DockPanel>
+                <ContentControl Content="{Binding}">
+                    <ContentControl.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton x:Name="SearchNavButton"
+                                                 Content="Customers"
+                                                 Foreground="{StaticResource MainCustomersBrush}"
+                                                 Style="{StaticResource MainNavigationBarRadioButtonSyle}"
+                                                 cal:Message.Attach="NavigateTo('Search')" />
+                                <RadioButton x:Name="OrdersNavButton"
+                                                 Content="Orders"
+                                             Foreground="{StaticResource OrdersBrush}"
+                                                 Style="{StaticResource MainNavigationBarRadioButtonSyle}"
+                                                 cal:Message.Attach="NavigateTo('Orders')" />
+
+                            </StackPanel>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding NavigationState}"
+                                             Value="Search">
+                                    <Setter TargetName="SearchNavButton"
+                                            Property="IsChecked"
+                                            Value="True" />
+                                </DataTrigger>
+
+                                <DataTrigger Binding="{Binding NavigationState}"
+                                             Value="Orders">
+                                    <Setter TargetName="OrdersNavButton"
+                                            Property="IsChecked"
+                                            Value="True" />
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </ContentControl.ContentTemplate>
+                </ContentControl>
+            </DockPanel>
+        </Border>
+        
+        <!-- ***************** Main grid ********************** -->
+        <Grid   Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ContentControl Grid.Row="1" 
+                            cal:View.Model="{Binding DataContext.ActiveItem, ElementName=root}" />
+        </Grid>
+    </Grid>
+
+</cas:Window>

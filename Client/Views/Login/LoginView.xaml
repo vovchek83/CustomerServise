@@ -1,0 +1,64 @@
+﻿<cas:Window x:Class="Client.Views.Login.LoginView"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:cal="http://www.caliburnproject.org"
+            xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+            xmlns:cas="http://schemas.company.com/cas/2015/xaml"
+            mc:Ignorable="d"
+            Height="300"
+            Width="350"
+            Icon="{StaticResource AppIconSource}"
+            WindowStartupLocation="CenterScreen"
+            WindowState="Normal"
+            WindowStyle="ToolWindow">
+    
+    <xctk:BusyIndicator IsBusy="{Binding IsBusy}"  >
+        <Grid HorizontalAlignment="Stretch" 
+              VerticalAlignment="Stretch">
+            
+            <Border BorderThickness="1"
+                    Background="{StaticResource InputBackgroundHover}"
+                    BorderBrush="Black">
+                
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="20,30,20,0">
+                        <Label Content="User Name:" 
+                           Margin="5,0,10,0"
+                               Width="80"/>
+                        <TextBox Text="{Binding UserName, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                            
+                             Width="110"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20">
+                        <Label Content="Password:"
+                               Width="80"
+                           Margin="5,0,10,0"/>
+                        <TextBox Text="{Binding Password, ValidatesOnNotifyDataErrors=True ,UpdateSourceTrigger=PropertyChanged}"
+                                     Width="110"/>
+                    </StackPanel>
+
+                    <Label Content="{Binding ErrorText}" 
+                       Margin="5" 
+                       Foreground="Red" 
+                       FontSize="14"/>
+                    <StackPanel Orientation="Horizontal" Margin="40,30,20,0">
+                        <Button Content="Login" 
+                            Margin="0,0,30,0"
+                            Style="{StaticResource  ClearManulSelectionButtonStyle}"
+                            Width="100"
+                            IsEnabled="{Binding CanLogin}"
+                    cal:Message.Attach="Login"/>
+                    <Button Content="Cancel" 
+                            Margin="0,0,0,0"
+                            Style="{StaticResource  ClearManulSelectionButtonStyle}"
+                            Width="100"
+                            IsEnabled="{Binding IsLoginEnable}"
+                    cal:Message.Attach="Cancel"/>
+                </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </xctk:BusyIndicator>
+</cas:Window>

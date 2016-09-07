@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Client.Views.Customers.CustomerOrdersToolBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:cal="http://www.caliburnproject.org"
+             d:DesignHeight="100" d:DesignWidth="300">
+
+    <ToolBar Background="{StaticResource FucsiaBrush}">
+
+        <Label Content="From:"
+               Foreground="White"
+               FontSize="16"
+               Height="38"/>
+        <xctk:DateTimePicker Value="{Binding FromDate}"
+                             Format="Custom"
+                             FormatString="dd/MM/yyyy"
+                             TimeFormat="Custom"
+                             TimeFormatString="HH:mm"
+                             MaxWidth="120"
+                             Height="30"/>
+
+        <Label Content="To:"
+               Height="38"
+               FontSize="16"
+               Foreground="White"/>
+        <xctk:DateTimePicker Value="{Binding ToDate}"
+                             Format="Custom"
+                             FormatString="dd/MM/yyyy"
+                             TimeFormat="Custom"
+                             TimeFormatString="HH:mm"
+                             MaxWidth="120"
+                             Height="30"/>
+
+        <Button Height="48"
+                Margin="5 0 0 0"
+                Width="Auto"
+                IsEnabled="{Binding CanAddNew}"
+                cal:Message.Attach="ApplyOrderFilter">
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Width="39"
+                           Height="39"
+                           Margin="5 5 5 0"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Fill="{StaticResource ApplyDrawingBrush}"
+                           Stretch="Uniform" />
+                <TextBlock VerticalAlignment="Center"
+                           Foreground="White"
+                           Margin="0 0 3 0"
+                           Text="Apply"/>
+            </StackPanel>
+        </Button>
+    </ToolBar>
+</UserControl>

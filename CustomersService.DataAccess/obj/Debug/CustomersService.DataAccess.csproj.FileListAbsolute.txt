@@ -1,0 +1,9 @@
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\bin\Debug\CustomersService.DataModel.dll
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\bin\Debug\CustomersService.DataModel.pdb
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\obj\Debug\CustomersService.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\obj\Debug\CustomersService.DataModel.dll
+C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\CustomersService.DataAccess\obj\Debug\CustomersService.DataModel.pdb

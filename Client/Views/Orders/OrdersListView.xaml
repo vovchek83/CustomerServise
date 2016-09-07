@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Client.Views.Orders.OrdersListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <xctk:BusyIndicator IsBusy="{Binding IsBusy}"  >
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Top" Padding="0" Background="{StaticResource FucsiaBrush}">
+                <Label Margin="0,10,0,10" Content="Group By:"/>
+                <ComboBox Width="100"
+                      DisplayMemberPath="Name"
+                      ItemsSource="{Binding ItemsGroup}"
+                      SelectedItem="{Binding SelectedItemGroup}">
+                </ComboBox>
+            </ToolBar>
+            <ListView ItemsSource="{Binding OrdersView}"  ItemContainerStyle="{StaticResource MainListViewItemStyle}"
+                  Grid.Row="1">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Order Id"
+                                        DisplayMemberBinding="{Binding Id}" />
+                        <GridViewColumn Header="Customer Name"
+                                        DisplayMemberBinding="{Binding CustomerName}" />
+                        <GridViewColumn Header="Order Date"
+                                        DisplayMemberBinding="{Binding OrderDate}" />
+                        <GridViewColumn Header="Order Status"
+                                        DisplayMemberBinding="{Binding StatusText}" />
+                        <GridViewColumn Header="Delivery Date"
+                                        DisplayMemberBinding="{Binding DeliveryDate}" />
+                        <GridViewColumn Header="Delivery Address"
+                                        DisplayMemberBinding="{Binding DeliveryAddress}" />
+                    </GridView>
+                </ListView.View>
+
+                <ListView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.ContainerStyle>
+                            <Style TargetType="{x:Type GroupItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <Expander IsExpanded="True">
+                                                <Expander.Header>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="{Binding Name}" 
+                                                               FontWeight="Bold" 
+                                                               Foreground="Gray" 
+                                                               FontSize="22"
+                                                               VerticalAlignment="Bottom" />
+                                                        <TextBlock Text="{Binding ItemCount}"
+                                                               FontSize="22" Foreground="Green"
+                                                               FontWeight="Bold"
+                                                               FontStyle="Italic"
+                                                               Margin="10,0,0,0"
+                                                               VerticalAlignment="Bottom" />
+                                                        <TextBlock Text=" item(s)" 
+                                                               FontSize="22"
+                                                               Foreground="Silver" 
+                                                               FontStyle="Italic"
+                                                               VerticalAlignment="Bottom" />
+                                                    </StackPanel>
+                                                </Expander.Header>
+
+                                                <ItemsPresenter />
+
+                                            </Expander>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </GroupStyle.ContainerStyle>
+                    </GroupStyle>
+                </ListView.GroupStyle>
+
+            </ListView>
+
+        </DockPanel>
+    </xctk:BusyIndicator>
+</UserControl>
+
+
