@@ -30,7 +30,7 @@ namespace Client
         {
 
             //  LogManager.GetLog = type => new FileLogger(type, CanDeleteLogFile);
-            LogManager.GetLog = type => new Logger();
+            LogManager.GetLog = type => new FileLogger(typeof(Bootstrapper), CanDeleteLogFile);
 
 
             _container = new CompositionContainer(

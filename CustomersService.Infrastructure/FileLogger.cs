@@ -59,12 +59,12 @@ namespace CustomersService.Infrastructure
         /// </summary>
         private void WriteMessage(string message, string catgeory)
         {
-            //using (StreamWriter writer = new StreamWriter(this._filename, true))
-            //{
-            //    writer.WriteLine("{0}: {1}", catgeory, message);
-            //}
+            using (StreamWriter writer = new StreamWriter(this._filename, true))
+            {
+                writer.WriteLine("{0}: {1}", catgeory, message);
+            }
 
-            Trace.WriteLine( string.Format("{0}: {1}", catgeory, message));
+            //Trace.WriteLine( string.Format("{0}: {1}", catgeory, message));
            
         }
 
