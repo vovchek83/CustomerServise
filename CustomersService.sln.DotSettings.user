@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/CodeStyle/LiveTemplatesUseVar/PreferVar/@EntryValue">False</s:Boolean>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Users\vovchek\Documents\Visual Studio 2015\Projects\CustomersService\AsteaLogViewer.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2514F8E75C9840A1BDD8150C8FE429A3/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2514F8E75C9840A1BDD8150C8FE429A3/GroupingIndex/@EntryValue">4</s:Int64>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2514F8E75C9840A1BDD8150C8FE429A3/Name/@EntryValue">GetCustomerAsync_FistName_Test</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=2514F8E75C9840A1BDD8150C8FE429A3/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;/Session&gt;</s:String></wpf:ResourceDictionary>
